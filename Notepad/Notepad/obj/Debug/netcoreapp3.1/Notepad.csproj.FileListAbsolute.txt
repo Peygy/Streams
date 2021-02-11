@@ -1,0 +1,13 @@
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\bin\Debug\netcoreapp3.1\Notepad.exe
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\bin\Debug\netcoreapp3.1\Notepad.deps.json
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\bin\Debug\netcoreapp3.1\Notepad.runtimeconfig.json
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\bin\Debug\netcoreapp3.1\Notepad.runtimeconfig.dev.json
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\bin\Debug\netcoreapp3.1\Notepad.dll
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\bin\Debug\netcoreapp3.1\Notepad.pdb
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\obj\Debug\netcoreapp3.1\Notepad.csprojAssemblyReference.cache
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\obj\Debug\netcoreapp3.1\Notepad.AssemblyInfoInputs.cache
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\obj\Debug\netcoreapp3.1\Notepad.AssemblyInfo.cs
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\obj\Debug\netcoreapp3.1\Notepad.csproj.CoreCompileInputs.cache
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\obj\Debug\netcoreapp3.1\Notepad.dll
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\obj\Debug\netcoreapp3.1\Notepad.pdb
+D:\Программирование\С#\Repos\Streams\Notepad\Notepad\obj\Debug\netcoreapp3.1\Notepad.genruntimeconfig.cache
