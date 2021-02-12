@@ -7,7 +7,7 @@ namespace Notepad
     {
         static void Main(string[] args)
         {
-            menu main = new menu();
+            Menu main = new Menu();
         }
     }
 }

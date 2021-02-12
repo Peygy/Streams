@@ -5,17 +5,17 @@ using System.IO;
 
 namespace Notepad
 {
-    class menu
+    class Menu
     {
-        createFile create;
-        readFile read;
-        writeFile write;
+        Writing create;
+        Viewing read;
+        Edition write;
 
-        public menu()
+        public Menu()
         {
-            create = new createFile();
-            read = new readFile();
-            write = new writeFile();
+            create = new Writing();
+            read = new Viewing();
+            write = new Edition();
             CallMenu();
         }
 
@@ -24,7 +24,6 @@ namespace Notepad
             int input = 0;
             while (input != 4)
             {
-                Console.WriteLine();
                 Console.WriteLine("1.Создать файл");
                 Console.WriteLine("2.Прочитать файл");
                 Console.WriteLine("3.Дозаписать файл");
@@ -39,19 +38,19 @@ namespace Notepad
                     case 1:
                         {
                             Console.Clear();
-                            create.CreateFile();
+                            create.WriteFile();
                             break;
                         }
                     case 2:
                         {
                             Console.Clear();
-                            read.ReadFile();
+                            read.ViewFile();
                             break;
                         }
                     case 3:
                         {
                             Console.Clear();
-                            write.WriteFile();
+                            write.EditFile();
                             break;
                         }
                     case 4:
