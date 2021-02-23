@@ -7,36 +7,32 @@ namespace Notepad
 {
     class Writing
     {
-        string path = @"D:\Программирование\С#\Repos\Streams\Notepad\test.txt";
-        protected void OutText()
+        private void OutText()
         {
             Console.Clear();
             Console.WriteLine("Введите текст для файла (Чтобы вернуться в меню нажмите Enter):");
             Console.WriteLine();
         }
-        public void WriteFile()
+        public void WriteFile(string path, bool accept)
         {
-            OutText();
-            StreamWriter output = new StreamWriter(path);
-            if(!File.Exists(path))
-            {
-                File.Create(path);
-            }
+            using (StreamWriter output = new StreamWriter(path), appending = File.AppendText(path))
+            {               
+                if (accept == false)
+                {
+                    OutText();
+                    if (!File.Exists(path))
+                    {
+                        File.Create(path);
+                    }
 
-            output.Write(Console.ReadLine());
-
-            output.Close();
-            Console.Clear();
-        }
-        public void WriteEdit()
-        {
-            if(File.Exists(path))
-            {
-                StreamWriter output = File.AppendText(path);
-
-                output.Write(Console.Read());
-                output.Close();
-            }
+                    output.Write(Console.ReadLine());
+                    Console.Clear();
+                }
+                else
+                {
+                    appending.Write(Console.ReadLine());                   
+                }
+            }          
         }
     }
 }

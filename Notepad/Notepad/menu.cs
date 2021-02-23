@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.IO;
 
 namespace Notepad
 {
     class Menu
     {
         Writing create;
-        Viewing read;
+        Reading read;
         Edition write;
 
         public Menu()
         {
             create = new Writing();
-            read = new Viewing();
+            read = new Reading();
             write = new Edition();
             CallMenu();
         }
 
         public void CallMenu()
         {
+            string path = @"D:\Программирование\С#\Repos\Streams\Notepad\test.txt";
             int input = 0;
             while (input != 4)
             {
@@ -38,19 +38,21 @@ namespace Notepad
                     case 1:
                         {
                             Console.Clear();
-                            create.WriteFile();
+                            create.WriteFile(path, false);
                             break;
                         }
                     case 2:
                         {
                             Console.Clear();
-                            read.ViewFile();
+                            read.ReadFile(path, false);
+                            Console.Clear();
                             break;
                         }
                     case 3:
                         {
                             Console.Clear();
-                            write.EditFile();
+                            write.EditFile(path, true);
+                            Console.Clear();
                             break;
                         }
                     case 4:

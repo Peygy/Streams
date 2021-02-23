@@ -8,24 +8,21 @@ namespace Notepad
     class Edition
     {
         Writing write = new Writing();
-        Viewing view = new Viewing();
-
-        string path = @"D:\Программирование\С#\Repos\Streams\Notepad\test.txt";
-        protected void OutText()
+        Reading read = new Reading();
+        private void OutText()
         {
             Console.Clear();
             Console.WriteLine("Дозапись файла (Чтобы вернуться в меню нажмите Enter):");
             Console.WriteLine();
         }
-        public void EditFile()
+        public void EditFile(string path, bool accept)
         {                    
             if (File.Exists(path))
             {
                 OutText();
-                view.ViewEdit();
-                write.WriteEdit();
-                Console.ReadLine();
-                Console.Clear();
+                read.ReadFile(path, accept);
+                write.WriteFile(path, accept);
+                Console.ReadLine();           
             }
         }
     }
