@@ -24,6 +24,7 @@ namespace Notepad
             int input = 0;
             while (input != 4)
             {
+                Console.Clear();
                 Console.WriteLine("1.Создать файл");
                 Console.WriteLine("2.Прочитать файл");
                 Console.WriteLine("3.Дозаписать файл");
@@ -45,14 +46,12 @@ namespace Notepad
                         {
                             Console.Clear();
                             read.ReadFile(path, false);
-                            Console.Clear();
                             break;
                         }
                     case 3:
                         {
                             Console.Clear();
                             write.EditFile(path, true);
-                            Console.Clear();
                             break;
                         }
                     case 4:
@@ -64,7 +63,6 @@ namespace Notepad
                             Console.Clear();
                             Console.WriteLine("Выберите номер из меню! Нажмите Enter...");
                             Console.ReadLine();
-                            Console.Clear();
                             break;
                         }
                 }

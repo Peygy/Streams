@@ -7,32 +7,53 @@ namespace Notepad
 {
     class Writing
     {
-        private void OutText()
+        protected void OutText()
         {
             Console.Clear();
-            Console.WriteLine("Введите текст для файла (Чтобы вернуться в меню нажмите Enter):");
+            Console.WriteLine("Введите текст для файла (Чтобы вернуться в меню введите 'stop' или 'стоп'):");
             Console.WriteLine();
         }
         public void WriteFile(string path, bool accept)
         {
-            using (StreamWriter output = new StreamWriter(path), appending = File.AppendText(path))
-            {               
-                if (accept == false)
+            string key;
+            if (accept == false)
+            {
+                using (StreamWriter output = new StreamWriter(path))
                 {
+                    key = "";
                     OutText();
                     if (!File.Exists(path))
                     {
                         File.Create(path);
                     }
 
-                    output.Write(Console.ReadLine());
-                    Console.Clear();
+                    while(!key.Contains("stop") )
+                    {
+                        key = Console.ReadLine();
+                        if (!key.Contains("stop") )
+                        {
+                            output.WriteLine(key);
+                        }   
+                        
+                    }                    
                 }
-                else
+            }
+
+            else
+            {
+                using (StreamWriter appending = File.AppendText(path))
                 {
-                    appending.Write(Console.ReadLine());                   
-                }
-            }          
+                    key = "";
+                    while (!key.Contains("stop") )
+                    {
+                        key = Console.ReadLine();
+                        if (!key.Contains("stop") )
+                        {
+                            appending.WriteLine(key);
+                        }                                           
+                    }
+                }                       
+            }            
         }
     }
 }
