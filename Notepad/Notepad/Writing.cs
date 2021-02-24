@@ -27,10 +27,10 @@ namespace Notepad
                         File.Create(path);
                     }
 
-                    while(!key.Contains("stop") )
+                    while(!key.Contains("stop") && !key.Contains("стоп"))
                     {
                         key = Console.ReadLine();
-                        if (!key.Contains("stop") )
+                        if (!key.Contains("stop") && !key.Contains("стоп"))
                         {
                             output.WriteLine(key);
                         }   
@@ -44,10 +44,10 @@ namespace Notepad
                 using (StreamWriter appending = File.AppendText(path))
                 {
                     key = "";
-                    while (!key.Contains("stop") )
+                    while (!key.Contains("stop") && !key.Contains("стоп"))
                     {
                         key = Console.ReadLine();
-                        if (!key.Contains("stop") )
+                        if (!key.Contains("stop") && !key.Contains("стоп"))
                         {
                             appending.WriteLine(key);
                         }                                           
