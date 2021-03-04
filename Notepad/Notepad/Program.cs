@@ -8,6 +8,7 @@ namespace Notepad
         static void Main(string[] args)
         {
             Menu main = new Menu();
+            main.CallMenu();
         }
     }
 }

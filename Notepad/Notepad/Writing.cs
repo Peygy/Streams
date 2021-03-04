@@ -6,54 +6,21 @@ using System.IO;
 namespace Notepad
 {
     class Writing
-    {
-        protected void OutText()
+    {        
+        public void WriteFile(string path, bool append)
         {
-            Console.Clear();
-            Console.WriteLine("Введите текст для файла (Чтобы вернуться в меню введите 'stop' или 'стоп'):");
-            Console.WriteLine();
-        }
-        public void WriteFile(string path, bool accept)
-        {
-            string key;
-            if (accept == false)
-            {
-                using (StreamWriter output = new StreamWriter(path))
+            string key = "";
+            using (StreamWriter output = new StreamWriter(path, append))
+            {                
+                while (!key.Contains("stop") && !key.Contains("стоп"))
                 {
-                    key = "";
-                    OutText();
-                    if (!File.Exists(path))
+                    key = Console.ReadLine();
+                    if (!key.Contains("stop") && !key.Contains("стоп"))
                     {
-                        File.Create(path);
+                        output.WriteLine(key);
                     }
-
-                    while(!key.Contains("stop") && !key.Contains("стоп"))
-                    {
-                        key = Console.ReadLine();
-                        if (!key.Contains("stop") && !key.Contains("стоп"))
-                        {
-                            output.WriteLine(key);
-                        }   
-                        
-                    }                    
                 }
             }
-
-            else
-            {
-                using (StreamWriter appending = File.AppendText(path))
-                {
-                    key = "";
-                    while (!key.Contains("stop") && !key.Contains("стоп"))
-                    {
-                        key = Console.ReadLine();
-                        if (!key.Contains("stop") && !key.Contains("стоп"))
-                        {
-                            appending.WriteLine(key);
-                        }                                           
-                    }
-                }                       
-            }            
         }
     }
 }

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Notepad
 {
-    class Reading : Writing
+    class Reading
     {        
         public void ReadFile(string path, bool accept)
         {            
@@ -13,10 +13,6 @@ namespace Notepad
             {
                 using (StreamReader content = new StreamReader(path))
                 {                   
-                    if (accept == false)
-                    {
-                        OutText();
-                    }
                     Console.Write(content.ReadToEnd());
                     if(accept == false)
                     {

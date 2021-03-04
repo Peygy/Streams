@@ -14,8 +14,14 @@ namespace Notepad
         {
             create = new Writing();
             read = new Reading();
-            write = new Edition();
-            CallMenu();
+            write = new Edition();           
+        }
+
+        public void OutText()
+        {
+            Console.Clear();
+            Console.WriteLine("Введите текст для файла (Чтобы вернуться в меню введите 'stop' или 'стоп'):");
+            Console.WriteLine();
         }
 
         public void CallMenu()
@@ -39,19 +45,22 @@ namespace Notepad
                     case 1:
                         {
                             Console.Clear();
+                            OutText();
                             create.WriteFile(path, false);
                             break;
                         }
                     case 2:
                         {
                             Console.Clear();
+                            OutText();
                             read.ReadFile(path, false);
                             break;
                         }
                     case 3:
                         {
                             Console.Clear();
-                            write.EditFile(path, true);
+                            OutText();
+                            write.EditFile(path);
                             break;
                         }
                     case 4:

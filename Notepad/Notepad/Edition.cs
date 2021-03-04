@@ -5,16 +5,16 @@ using System.IO;
 
 namespace Notepad
 {
-    class Edition : Writing
+    class Edition
     {
+        Writing write = new Writing();
         Reading read = new Reading();
-        public void EditFile(string path, bool accept)
+        public void EditFile(string path)
         {
             if (File.Exists(path))
             {
-                OutText();
-                read.ReadFile(path, accept);
-                WriteFile(path, accept);       
+                read.ReadFile(path, true);
+                write.WriteFile(path, true);       
             }
         }
     }
