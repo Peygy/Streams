@@ -17,7 +17,7 @@ namespace Notepad
             write = new Edition();           
         }
 
-        public void OutText()
+        public void OutText() //Метод для общения с пользователем в создании и чтении файла
         {
             Console.Clear();
             Console.WriteLine("Введите текст для файла (Чтобы вернуться в меню введите 'stop' или 'стоп'):");
@@ -42,32 +42,32 @@ namespace Notepad
                 int.TryParse(Console.ReadLine(), out input);
                 switch (input)
                 {
-                    case 1:
+                    case 1: //Создание файла
                         {
                             Console.Clear();
                             OutText();
                             create.WriteFile(path, false);
                             break;
                         }
-                    case 2:
+                    case 2: //Чтение файла
                         {
                             Console.Clear();
                             OutText();
                             read.ReadFile(path, false);
                             break;
                         }
-                    case 3:
+                    case 3: //Дозапись файла
                         {
                             Console.Clear();
                             OutText();
                             write.EditFile(path);
                             break;
                         }
-                    case 4:
+                    case 4: //Закрыть программу 
                         {
                             break;
                         }
-                    default:
+                    default: //При выборе номера не из меню
                         {
                             Console.Clear();
                             Console.WriteLine("Выберите номер из меню! Нажмите Enter...");

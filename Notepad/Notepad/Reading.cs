@@ -11,7 +11,7 @@ namespace Notepad
         {            
             if (File.Exists(path))
             {
-                using (FileStream content = new FileStream(path, FileMode.Open))
+                using (FileStream content = new FileStream(path, FileMode.Open)) //Чтение файла с FileStream
                 {
                     byte[] array = new byte[content.Length];
                     content.Read(array, 0, array.Length);

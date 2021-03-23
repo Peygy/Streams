@@ -9,7 +9,7 @@ namespace Notepad
     {
         Writing write = new Writing();
         Reading read = new Reading();
-        public void EditFile(string path)
+        public void EditFile(string path) //Дозапись файла
         {
             if (File.Exists(path))
             {

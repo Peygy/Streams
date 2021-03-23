@@ -10,7 +10,7 @@ namespace Notepad
         public void WriteFile(string path, bool append)
         {
             string key = "";
-            using (FileStream output = new FileStream(path, FileMode.OpenOrCreate))
+            using (FileStream output = new FileStream(path, FileMode.OpenOrCreate)) //Создание файла с FileStream
             {                
                 while (!key.Contains("stop") && !key.Contains("стоп"))
                 {
