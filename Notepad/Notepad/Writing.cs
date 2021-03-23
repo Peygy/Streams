@@ -10,15 +10,14 @@ namespace Notepad
         public void WriteFile(string path, bool append)
         {
             string key = "";
-            using (StreamWriter output = new StreamWriter(path, append))
+            using (FileStream output = new FileStream(path, FileMode.OpenOrCreate))
             {                
                 while (!key.Contains("stop") && !key.Contains("стоп"))
                 {
+                    byte[] array = Encoding.Default.GetBytes(key);
+                    output.Write(array, 0, array.Length);
+
                     key = Console.ReadLine();
-                    if (!key.Contains("stop") && !key.Contains("стоп"))
-                    {
-                        output.WriteLine(key);
-                    }
                 }
             }
         }

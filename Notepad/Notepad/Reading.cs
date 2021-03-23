@@ -11,9 +11,12 @@ namespace Notepad
         {            
             if (File.Exists(path))
             {
-                using (StreamReader content = new StreamReader(path))
-                {                   
-                    Console.Write(content.ReadToEnd());
+                using (FileStream content = new FileStream(path, FileMode.Open))
+                {
+                    byte[] array = new byte[content.Length];
+                    content.Read(array, 0, array.Length);
+                    Console.WriteLine(Encoding.Default.GetString(array));
+
                     if(accept == false)
                     {
                         Console.ReadLine();
